@@ -1,48 +1,43 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-    FileCode, Cpu, Coffee, FileJson, Server, Database, 
-    Code, Palette, Wind, Atom, Terminal, Zap, 
-    ArrowRightLeft, GitBranch, Github, Leaf, Triangle, Cloud 
-} from 'lucide-react';
 
 const skillsData = [
     {
-        category: "Languages",
-        gradient: "from-blue-500/20 to-cyan-500/20",
+        category: "CORE LANGUAGES",
+        gradient: "from-yellow-500/10 to-transparent",
         skills: [
-            { name: "Python", icon: FileCode },
-            { name: "C", icon: Cpu },
-            { name: "C++", icon: Cpu },
-            { name: "Java", icon: Coffee },
-            { name: "JavaScript", icon: FileJson },
-            { name: "PHP", icon: Server },
-            { name: "SQL", icon: Database }
+            { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+            { name: "C", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
+            { name: "C++", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
+            { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+            { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+            { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+            { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+            { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" }
         ]
     },
     {
-        category: "Frameworks & Libraries",
-        gradient: "from-blue-500/20 to-cyan-500/20",
+        category: "ARCHITECTURE & FRAMEWORKS",
+        gradient: "from-blue-500/10 to-transparent",
         skills: [
-            { name: "HTML", icon: Code },
-            { name: "CSS", icon: Palette },
-            { name: "Tailwind CSS", icon: Wind },
-            { name: "React.js", icon: Atom },
-            { name: "Node.js", icon: Terminal },
-            { name: "Express.js", icon: Zap },
-            { name: "REST APIs", icon: ArrowRightLeft }
+            { name: "React.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+            { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+            { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+            { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
         ]
     },
     {
-        category: "Tools & Platforms",
-        gradient: "from-blue-500/20 to-cyan-500/20",
+        category: "TOOLS & ECOSYSTEM",
+        gradient: "from-purple-500/10 to-transparent",
         skills: [
-            { name: "Git", icon: GitBranch },
-            { name: "GitHub", icon: Github },
-            { name: "MySQL", icon: Database },
-            { name: "MongoDB", icon: Leaf },
-            { name: "Vercel", icon: Triangle },
-            { name: "Render", icon: Cloud }
+            { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+            { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+            { name: "Postman", icon: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" },
+            { name: "Visual Studio Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+            { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+            { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+            { name: "Vercel", icon: "https://decodes.io/icons/vercel.svg" },
+            { name: "Render", icon: "https://www.vectorlogo.zone/logos/render/render-icon.svg" }
         ]
     }
 ];
@@ -72,8 +67,8 @@ const TiltCard = ({ group }) => {
         const centerX = box.width / 2;
         const centerY = box.height / 2;
 
-        const rotateXValue = ((y - centerY) / centerY) * -15; // 15 degree max tilt
-        const rotateYValue = ((x - centerX) / centerX) * 15;
+        const rotateXValue = ((y - centerY) / centerY) * -10; // Reduced tilt for precision
+        const rotateYValue = ((x - centerX) / centerX) * 10;
 
         setRotateX(rotateXValue);
         setRotateY(rotateYValue);
@@ -93,33 +88,43 @@ const TiltCard = ({ group }) => {
             <motion.div
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                animate={{ rotateX, rotateY, scale: rotateX !== 0 ? 1.02 : 1 }}
+                animate={{ rotateX, rotateY, scale: rotateX !== 0 ? 1.01 : 1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                className="relative h-full p-5 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)] transition-shadow duration-300 group overflow-hidden"
+                className="relative h-full p-8 rounded-3xl bg-[#080808] border border-white/5 shadow-2xl transition-all duration-300 group overflow-hidden"
                 style={{ transformStyle: "preserve-3d" }}
             >
-                {/* Interactive gradient background on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${group.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}></div>
+                {/* Subtle gradient background on hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${group.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}></div>
 
-                {/* Lifts content in 3D */}
-                <div style={{ transform: "translateZ(40px)" }} className="relative z-10 flex flex-col h-full pointer-events-auto">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-6 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <div className="relative z-10 flex flex-col h-full">
+                    {/* Gold Title from Screenshot */}
+                    <h3 className="text-sm font-black text-[#EAB308] mb-10 tracking-[0.2em] transition-colors uppercase border-b border-white/5 pb-4">
                         {group.category}
                     </h3>
 
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                        {group.skills.map((skill, sIndex) => {
-                            const Icon = skill.icon;
-                            return (
-                                <span
-                                    key={sIndex}
-                                    className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50/90 dark:bg-white/5 backdrop-blur-[2px] border border-gray-200/50 dark:border-white/10 text-gray-700 dark:text-gray-300 text-xs font-semibold rounded-lg group-hover:border-gray-300/50 dark:group-hover:border-white/30 group-hover:-translate-y-0.5 transition-all shadow-sm"
-                                >
-                                    <Icon size={14} className="text-blue-500 dark:text-blue-400" />
+                    <div className="grid grid-cols-4 sm:grid-cols-4 gap-y-10 gap-x-4">
+                        {group.skills.map((skill, sIndex) => (
+                            <div
+                                key={sIndex}
+                                className="flex flex-col items-center group/skill"
+                            >
+                                {/* Dark Box for Icon */}
+                                <div className="w-14 h-14 flex items-center justify-center bg-[#151515] border border-white/5 rounded-2xl mb-3 group-hover/skill:border-white/20 group-hover/skill:bg-[#1a1a1a] transition-all duration-300 shadow-lg group-hover/skill:shadow-white/5">
+                                    <img 
+                                        src={skill.icon} 
+                                        alt={skill.name} 
+                                        className="w-7 h-7 object-contain group-hover/skill:scale-110 transition-transform duration-300"
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"; // Fallback
+                                        }}
+                                    />
+                                </div>
+                                <span className="text-[10px] font-medium text-gray-400 group-hover/skill:text-gray-200 transition-colors text-center truncate w-full px-1">
                                     {skill.name}
                                 </span>
-                            );
-                        })}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </motion.div>
@@ -129,10 +134,10 @@ const TiltCard = ({ group }) => {
 
 const Skills = () => {
     return (
-        <section id="skills" className="py-24 relative overflow-hidden bg-white dark:bg-[#030303] transition-colors duration-300">
+        <section id="skills" className="py-32 relative overflow-hidden bg-[#030303] transition-colors duration-300">
             {/* Background Decorative Elements */}
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
-            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[150px] pointer-events-none"></div>
+            <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[150px] pointer-events-none"></div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <motion.div
@@ -140,10 +145,14 @@ const Skills = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    className="text-center mb-20"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight transition-colors">Technical Skills</h2>
-                    <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+                    <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight transition-colors">Technical Skills</h2>
+                    <div className="flex items-center justify-center gap-2">
+                        <div className="w-12 h-1 bg-gradient-to-r from-blue-600 to-transparent rounded-full"></div>
+                        <div className="w-3 h-3 border-2 border-blue-600 rounded-full"></div>
+                        <div className="w-12 h-1 bg-gradient-to-l from-blue-600 to-transparent rounded-full"></div>
+                    </div>
                 </motion.div>
 
                 <motion.div
@@ -151,7 +160,7 @@ const Skills = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-50px" }}
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
                     {skillsData.map((group, index) => (
                         <TiltCard key={index} group={group} />
