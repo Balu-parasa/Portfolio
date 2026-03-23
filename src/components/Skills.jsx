@@ -1,26 +1,49 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { 
+    FileCode, Cpu, Coffee, FileJson, Server, Database, 
+    Code, Palette, Wind, Atom, Terminal, Zap, 
+    ArrowRightLeft, GitBranch, Github, Leaf, Triangle, Cloud 
+} from 'lucide-react';
 
 const skillsData = [
     {
         category: "Languages",
         gradient: "from-blue-500/20 to-cyan-500/20",
-        skills: ["Python", "C", "C++", "Java", "JavaScript", "PHP", "SQL"]
+        skills: [
+            { name: "Python", icon: FileCode },
+            { name: "C", icon: Cpu },
+            { name: "C++", icon: Cpu },
+            { name: "Java", icon: Coffee },
+            { name: "JavaScript", icon: FileJson },
+            { name: "PHP", icon: Server },
+            { name: "SQL", icon: Database }
+        ]
     },
     {
         category: "Frameworks & Libraries",
         gradient: "from-blue-500/20 to-cyan-500/20",
-        skills: ["HTML", "CSS", "Tailwind CSS", "React.js", "Node.js", "Express.js", "REST APIs"]
+        skills: [
+            { name: "HTML", icon: Code },
+            { name: "CSS", icon: Palette },
+            { name: "Tailwind CSS", icon: Wind },
+            { name: "React.js", icon: Atom },
+            { name: "Node.js", icon: Terminal },
+            { name: "Express.js", icon: Zap },
+            { name: "REST APIs", icon: ArrowRightLeft }
+        ]
     },
     {
         category: "Tools & Platforms",
         gradient: "from-blue-500/20 to-cyan-500/20",
-        skills: ["Git", "GitHub", "MySQL", "MongoDB", "Vercel", "Render"]
-    },
-    {
-        category: "Soft Skills",
-        gradient: "from-blue-500/20 to-cyan-500/20",
-        skills: ["Problem-solving", "Communication", "Adaptability", "Teamwork"]
+        skills: [
+            { name: "Git", icon: GitBranch },
+            { name: "GitHub", icon: Github },
+            { name: "MySQL", icon: Database },
+            { name: "MongoDB", icon: Leaf },
+            { name: "Vercel", icon: Triangle },
+            { name: "Render", icon: Cloud }
+        ]
     }
 ];
 
@@ -85,14 +108,18 @@ const TiltCard = ({ group }) => {
                     </h3>
 
                     <div className="flex flex-wrap gap-2 mt-auto">
-                        {group.skills.map((skill, sIndex) => (
-                            <span
-                                key={sIndex}
-                                className="px-3 py-1.5 bg-gray-50/90 dark:bg-white/5 backdrop-blur-[2px] border border-gray-200/50 dark:border-white/10 text-gray-700 dark:text-gray-300 text-xs font-semibold rounded-lg group-hover:border-gray-300/50 dark:group-hover:border-white/30 group-hover:-translate-y-0.5 transition-all shadow-sm"
-                            >
-                                {skill}
-                            </span>
-                        ))}
+                        {group.skills.map((skill, sIndex) => {
+                            const Icon = skill.icon;
+                            return (
+                                <span
+                                    key={sIndex}
+                                    className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50/90 dark:bg-white/5 backdrop-blur-[2px] border border-gray-200/50 dark:border-white/10 text-gray-700 dark:text-gray-300 text-xs font-semibold rounded-lg group-hover:border-gray-300/50 dark:group-hover:border-white/30 group-hover:-translate-y-0.5 transition-all shadow-sm"
+                                >
+                                    <Icon size={14} className="text-blue-500 dark:text-blue-400" />
+                                    {skill.name}
+                                </span>
+                            );
+                        })}
                     </div>
                 </div>
             </motion.div>
@@ -124,7 +151,7 @@ const Skills = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-50px" }}
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
                 >
                     {skillsData.map((group, index) => (
                         <TiltCard key={index} group={group} />
