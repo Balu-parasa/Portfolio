@@ -87,7 +87,7 @@ const Hero = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.5, duration: 1 }}
-                    className="flex flex-col items-center group cursor-pointer z-20 mb-8"
+                    className="flex flex-col items-center group cursor-pointer z-20 mb-8 mt-5 mr-8"
                 >
                     <div className="w-8 h-14 border-2 border-gray-400 dark:border-gray-500 rounded-full flex justify-center p-1.5 group-hover:border-blue-600 dark:group-hover:border-blue-400 transition-colors duration-300 bg-white/50 dark:bg-black/20 backdrop-blur-sm shadow-sm group-hover:shadow-[0_0_15px_rgba(59,130,246,0.2)]">
                         <motion.div

@@ -51,19 +51,19 @@ const Achievements = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: i * 0.1 }}
                             whileHover={{ y: -8 }}
-                            className="group relative bg-[#0a0a0a] p-8 rounded-[2rem] border border-white/5 hover:border-white/10 transition-all duration-500 overflow-hidden"
+                            className="group relative bg-white dark:bg-[#0a0a0a] p-8 rounded-[2rem] border border-gray-100 dark:border-white/5 hover:border-blue-100 dark:hover:border-white/10 shadow-sm dark:shadow-none transition-all duration-500 overflow-hidden"
                         >
                             <div className="relative z-10 flex flex-col h-full">
-                                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                                <div className="w-12 h-12 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                                     {item.icon}
                                 </div>
-                                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-blue-500 transition-colors duration-300">
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                                     {item.title}
                                 </h3>
-                                <p className="text-gray-400 leading-relaxed text-sm mb-8 flex-grow">
+                                <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm mb-8 flex-grow">
                                     {item.desc}
                                 </p>
-                                <div className="text-[10px] font-bold text-blue-500 uppercase tracking-widest mt-auto">
+                                <div className="text-[10px] font-bold text-blue-600 dark:text-blue-500 uppercase tracking-widest mt-auto">
                                     {item.status}
                                 </div>
                             </div>

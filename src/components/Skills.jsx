@@ -90,15 +90,15 @@ const TiltCard = ({ group }) => {
                 onMouseLeave={handleMouseLeave}
                 animate={{ rotateX, rotateY, scale: rotateX !== 0 ? 1.01 : 1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                className="relative h-full p-8 rounded-3xl bg-[#0a0a0a] border border-white/10 shadow-2xl transition-all duration-300 group overflow-hidden"
+                className="relative h-full p-8 rounded-3xl bg-white dark:bg-[#0a0a0a] border border-gray-100 dark:border-white/10 shadow-xl dark:shadow-2xl transition-all duration-300 group overflow-hidden"
                 style={{ transformStyle: "preserve-3d" }}
             >
                 {/* Subtle gradient background on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${group.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}></div>
 
                 <div className="relative z-10 flex flex-col h-full">
-                    {/* Aligned Category Title (Blue/White theme) */}
-                    <h3 className="text-sm font-bold text-blue-500 dark:text-blue-400 mb-10 tracking-[0.2em] transition-colors uppercase border-b border-white/5 pb-4">
+                    {/* Aligned Category Title (Blue theme) */}
+                    <h3 className="text-sm font-bold text-blue-600 dark:text-blue-400 mb-10 tracking-[0.2em] transition-colors uppercase border-b border-gray-100 dark:border-white/5 pb-4">
                         {group.category}
                     </h3>
 
@@ -109,7 +109,7 @@ const TiltCard = ({ group }) => {
                                 className="flex flex-col items-center group/skill"
                             >
                                 {/* Glowing Box for Icon */}
-                                <div className="w-14 h-14 flex items-center justify-center bg-[#151515] border border-white/5 rounded-2xl mb-3 group-hover/skill:border-blue-500/50 group-hover/skill:bg-[#1a1a1a] transition-all duration-300 shadow-lg group-hover/skill:shadow-blue-500/20 group-hover/skill:-translate-y-1">
+                                <div className="w-14 h-14 flex items-center justify-center bg-gray-50 dark:bg-[#151515] border border-gray-100 dark:border-white/5 rounded-2xl mb-3 group-hover/skill:border-blue-500/50 group-hover/skill:bg-white dark:group-hover/skill:bg-[#1a1a1a] transition-all duration-300 shadow-sm group-hover/skill:shadow-blue-500/20 group-hover/skill:-translate-y-1">
                                     <img 
                                         src={skill.icon} 
                                         alt={skill.name} 
@@ -120,7 +120,7 @@ const TiltCard = ({ group }) => {
                                         }}
                                     />
                                 </div>
-                                <span className="text-[10px] font-medium text-gray-400 group-hover/skill:text-white transition-colors text-center truncate w-full px-1">
+                                <span className="text-[10px] font-medium text-gray-500 dark:text-gray-400 group-hover/skill:text-gray-900 dark:group-hover/skill:text-white transition-colors text-center truncate w-full px-1">
                                     {skill.name}
                                 </span>
                             </div>
@@ -134,7 +134,7 @@ const TiltCard = ({ group }) => {
 
 const Skills = () => {
     return (
-        <section id="skills" className="py-32 relative overflow-hidden bg-[#030303] transition-colors duration-300">
+        <section id="skills" className="py-32 relative overflow-hidden bg-white dark:bg-[#030303] transition-colors duration-300">
             {/* Background Decorative Elements - Aligned with Hero */}
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[150px] pointer-events-none"></div>
             <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[150px] pointer-events-none"></div>
@@ -147,7 +147,7 @@ const Skills = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-20"
                 >
-                    <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight transition-colors">
+                    <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tight transition-colors">
                         Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Skills</span>
                     </h2>
                     <div className="flex items-center justify-center gap-2">
