@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import baluImg from '../assets/balu1.jpg';
+import balu_professional from '../assets/balu_professional.png';
 
 const About = () => {
     return (
@@ -30,16 +30,20 @@ const About = () => {
                         transition={{ duration: 0.8 }}
                         className="lg:col-span-5 relative flex justify-center items-center"
                     >
-                        <div className="relative w-full max-w-xs group p-4 sm:p-0">
-                            {/* Main image container */}
-                            <div className="relative bg-white dark:bg-[#0a0a0a] p-2 rounded-2xl border border-gray-100 dark:border-white/10 shadow-lg overflow-hidden aspect-square sm:aspect-[4/5] z-10 transition-transform duration-500 hover:-translate-y-2 hover:shadow-xl">
+                        <motion.div
+                            whileHover={{ scale: 1.02 }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                            className="relative w-full max-w-[300px] group p-4 sm:p-0"
+                        >
+                            {/* Main image container with subtle glow */}
+                            <div className="relative bg-white dark:bg-[#0a0a0a] p-2 rounded-[2rem] border border-gray-100 dark:border-white/10 shadow-lg group-hover:shadow-blue-500/10 overflow-hidden aspect-square sm:aspect-[4/5] z-10 transition-all duration-500">
                                 <img
-                                    src={baluImg}
+                                    src={balu_professional}
                                     alt="Balu Lakshman Pavan"
-                                    className="w-full h-full object-cover rounded-xl filter hover:brightness-105 transition-all duration-300"
+                                    className="w-full h-full object-cover object-top rounded-[1.8rem] filter hover:brightness-105 transition-all duration-500"
                                 />
                             </div>
-                        </div>
+                        </motion.div>
                     </motion.div>
 
                     {/* Bio Section */}
