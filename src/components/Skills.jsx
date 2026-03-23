@@ -35,9 +35,9 @@ const skillsData = [
             { name: "Postman", icon: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" },
             { name: "Visual Studio Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
             { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-            { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-            { name: "Vercel", icon: "https://decodes.io/icons/vercel.svg" },
-            { name: "Render", icon: "https://www.vectorlogo.zone/logos/render/render-icon.svg" }
+            { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" }
+            // { name: "Vercel", icon: "https://decodes.io/icons/vercel.svg" },
+            // { name: "Render", icon: "https://www.vectorlogo.zone/logos/render/render-icon.svg" }
         ]
     }
 ];
