@@ -90,7 +90,7 @@ const TiltCard = ({ group }) => {
                 onMouseLeave={handleMouseLeave}
                 animate={{ rotateX, rotateY, scale: rotateX !== 0 ? 1.01 : 1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                className="relative h-full p-8 rounded-3xl bg-white dark:bg-[#0a0a0a] border border-gray-100 dark:border-white/10 shadow-xl dark:shadow-2xl transition-all duration-300 group overflow-hidden"
+                className="relative h-full p-6 rounded-3xl bg-white dark:bg-[#0a0a0a] border border-gray-100 dark:border-white/10 shadow-xl dark:shadow-2xl transition-all duration-300 group overflow-hidden"
                 style={{ transformStyle: "preserve-3d" }}
             >
                 {/* Subtle gradient background on hover */}
@@ -98,7 +98,7 @@ const TiltCard = ({ group }) => {
 
                 <div className="relative z-10 flex flex-col h-full">
                     {/* Aligned Category Title (Blue theme) */}
-                    <h3 className="text-sm font-bold text-blue-600 dark:text-blue-400 mb-10 tracking-[0.2em] transition-colors uppercase border-b border-gray-100 dark:border-white/5 pb-4">
+                    <h3 className="text-sm font-bold text-blue-600 dark:text-blue-400 mb-8 tracking-[0.2em] transition-colors uppercase border-b border-gray-100 dark:border-white/5 pb-3">
                         {group.category}
                     </h3>
 
@@ -120,7 +120,7 @@ const TiltCard = ({ group }) => {
                                         }}
                                     />
                                 </div>
-                                <span className="text-[10px] font-medium text-gray-500 dark:text-gray-400 group-hover/skill:text-gray-900 dark:group-hover/skill:text-white transition-colors text-center truncate w-full px-1">
+                                <span className="text-xs font-medium text-gray-500 dark:text-gray-400 group-hover/skill:text-gray-900 dark:group-hover/skill:text-white transition-colors text-center truncate w-full px-1">
                                     {skill.name}
                                 </span>
                             </div>
@@ -147,14 +147,9 @@ const Skills = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-20"
                 >
-                    <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tight transition-colors">
-                        Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Skills</span>
-                    </h2>
-                    <div className="flex items-center justify-center gap-2">
-                        <div className="w-12 h-1 bg-gradient-to-r from-blue-600 to-transparent rounded-full"></div>
-                        <div className="w-3 h-3 border-2 border-blue-600 rounded-full"></div>
-                        <div className="w-12 h-1 bg-gradient-to-l from-blue-600 to-transparent rounded-full"></div>
-                    </div>
+                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight transition-colors">Technical Skills</h2>
+                    <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-6"></div>
+                    <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-lg transition-colors">Proficiency in libraries and tools.</p>
                 </motion.div>
 
                 <motion.div

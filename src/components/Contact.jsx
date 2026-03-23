@@ -56,8 +56,8 @@ const Contact = () => {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight transition-colors">Get In Touch</h2>
-                    <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
-                    <p className="mt-4 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto transition-colors">Open for opportunities. Let's build something amazing together!</p>
+                    <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-6"></div>
+                    <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-lg transition-colors italic">Open for opportunities. Let's build something amazing together!</p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">

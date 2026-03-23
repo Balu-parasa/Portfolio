@@ -18,7 +18,8 @@ const About = () => {
                     className="text-center mb-20"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight transition-colors">About Me</h2>
-                    <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+                    <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-6"></div>
+                    <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-lg transition-colors">A brief introduction to my journey and passion.</p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
