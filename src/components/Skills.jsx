@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const skillsData = [
     {
         category: "CORE LANGUAGES",
-        gradient: "from-yellow-500/10 to-transparent",
+        gradient: "from-blue-500/10 to-transparent",
         skills: [
             { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
             { name: "C", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
@@ -18,7 +18,7 @@ const skillsData = [
     },
     {
         category: "ARCHITECTURE & FRAMEWORKS",
-        gradient: "from-blue-500/10 to-transparent",
+        gradient: "from-indigo-500/10 to-transparent",
         skills: [
             { name: "React.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
             { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
@@ -67,7 +67,7 @@ const TiltCard = ({ group }) => {
         const centerX = box.width / 2;
         const centerY = box.height / 2;
 
-        const rotateXValue = ((y - centerY) / centerY) * -10; // Reduced tilt for precision
+        const rotateXValue = ((y - centerY) / centerY) * -10;
         const rotateYValue = ((x - centerX) / centerX) * 10;
 
         setRotateX(rotateXValue);
@@ -90,37 +90,37 @@ const TiltCard = ({ group }) => {
                 onMouseLeave={handleMouseLeave}
                 animate={{ rotateX, rotateY, scale: rotateX !== 0 ? 1.01 : 1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                className="relative h-full p-8 rounded-3xl bg-[#080808] border border-white/5 shadow-2xl transition-all duration-300 group overflow-hidden"
+                className="relative h-full p-8 rounded-3xl bg-[#0a0a0a] border border-white/10 shadow-2xl transition-all duration-300 group overflow-hidden"
                 style={{ transformStyle: "preserve-3d" }}
             >
                 {/* Subtle gradient background on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${group.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}></div>
 
                 <div className="relative z-10 flex flex-col h-full">
-                    {/* Gold Title from Screenshot */}
-                    <h3 className="text-sm font-black text-[#EAB308] mb-10 tracking-[0.2em] transition-colors uppercase border-b border-white/5 pb-4">
+                    {/* Aligned Category Title (Blue/White theme) */}
+                    <h3 className="text-sm font-bold text-blue-500 dark:text-blue-400 mb-10 tracking-[0.2em] transition-colors uppercase border-b border-white/5 pb-4">
                         {group.category}
                     </h3>
 
-                    <div className="grid grid-cols-4 sm:grid-cols-4 gap-y-10 gap-x-4">
+                    <div className="grid grid-cols-4 gap-y-10 gap-x-4">
                         {group.skills.map((skill, sIndex) => (
                             <div
                                 key={sIndex}
                                 className="flex flex-col items-center group/skill"
                             >
-                                {/* Dark Box for Icon */}
-                                <div className="w-14 h-14 flex items-center justify-center bg-[#151515] border border-white/5 rounded-2xl mb-3 group-hover/skill:border-white/20 group-hover/skill:bg-[#1a1a1a] transition-all duration-300 shadow-lg group-hover/skill:shadow-white/5">
+                                {/* Glowing Box for Icon */}
+                                <div className="w-14 h-14 flex items-center justify-center bg-[#151515] border border-white/5 rounded-2xl mb-3 group-hover/skill:border-blue-500/50 group-hover/skill:bg-[#1a1a1a] transition-all duration-300 shadow-lg group-hover/skill:shadow-blue-500/20 group-hover/skill:-translate-y-1">
                                     <img 
                                         src={skill.icon} 
                                         alt={skill.name} 
                                         className="w-7 h-7 object-contain group-hover/skill:scale-110 transition-transform duration-300"
                                         onError={(e) => {
                                             e.target.onerror = null;
-                                            e.target.src = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"; // Fallback
+                                            e.target.src = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg";
                                         }}
                                     />
                                 </div>
-                                <span className="text-[10px] font-medium text-gray-400 group-hover/skill:text-gray-200 transition-colors text-center truncate w-full px-1">
+                                <span className="text-[10px] font-medium text-gray-400 group-hover/skill:text-white transition-colors text-center truncate w-full px-1">
                                     {skill.name}
                                 </span>
                             </div>
@@ -135,7 +135,7 @@ const TiltCard = ({ group }) => {
 const Skills = () => {
     return (
         <section id="skills" className="py-32 relative overflow-hidden bg-[#030303] transition-colors duration-300">
-            {/* Background Decorative Elements */}
+            {/* Background Decorative Elements - Aligned with Hero */}
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[150px] pointer-events-none"></div>
             <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[150px] pointer-events-none"></div>
 
@@ -147,7 +147,9 @@ const Skills = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-20"
                 >
-                    <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight transition-colors">Technical Skills</h2>
+                    <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight transition-colors">
+                        Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Skills</span>
+                    </h2>
                     <div className="flex items-center justify-center gap-2">
                         <div className="w-12 h-1 bg-gradient-to-r from-blue-600 to-transparent rounded-full"></div>
                         <div className="w-3 h-3 border-2 border-blue-600 rounded-full"></div>

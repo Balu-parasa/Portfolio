@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon, Github, Linkedin } from 'lucide-react';
 
 const Navbar = ({ darkMode, toggleDarkMode }) => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -31,9 +31,26 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                 }`}
         >
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-                <a href="#home" className="text-2xl font-bold tracking-tighter text-blue-900 dark:text-white transition-colors duration-300">
-                    PBLP<span className="text-blue-500">.</span>
-                </a>
+                <div className="flex items-center gap-4">
+                    <a 
+                        href="https://github.com/Balu-parasa" 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                        aria-label="GitHub"
+                    >
+                        <Github size={24} />
+                    </a>
+                    <a 
+                        href="https://www.linkedin.com/in/balu-parasa" 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                        aria-label="LinkedIn"
+                    >
+                        <Linkedin size={24} />
+                    </a>
+                </div>
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center space-x-8">
