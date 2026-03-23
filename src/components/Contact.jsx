@@ -56,7 +56,11 @@ const Contact = () => {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight transition-colors">Get In Touch</h2>
-                    <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-6"></div>
+                    <div className="flex items-center justify-center gap-2 mb-6">
+                        <div className="w-12 h-1 bg-gradient-to-r from-blue-600 to-transparent rounded-full"></div>
+                        <div className="w-3 h-3 border-2 border-blue-600 rounded-full"></div>
+                        <div className="w-12 h-1 bg-gradient-to-l from-blue-600 to-transparent rounded-full"></div>
+                    </div>
                     <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-lg transition-colors italic">Open for opportunities. Let's build something amazing together!</p>
                 </motion.div>
 
