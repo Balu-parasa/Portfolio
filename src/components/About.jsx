@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Github, Linkedin } from 'lucide-react';
 import balu_professional from '../assets/balu_professional.png';
 
 const About = () => {
@@ -18,12 +19,13 @@ const About = () => {
                     className="text-center mb-20"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight transition-colors">About Me</h2>
-                    <div className="flex items-center justify-center gap-2 mb-6">
-                        <div className="w-12 h-1 bg-gradient-to-r from-blue-600 to-transparent rounded-full"></div>
-                        <div className="w-3 h-3 border-2 border-blue-600 rounded-full"></div>
-                        <div className="w-12 h-1 bg-gradient-to-l from-blue-600 to-transparent rounded-full"></div>
+                    <div className="flex items-center justify-center gap-3 mb-8">
+                        <div className="w-18 h-1.5 bg-gradient-to-r from-blue-600 to-transparent rounded-full"></div>
+                        <div className="w-4 h-4 border-[3px] border-blue-600 rounded-full"></div>
+                        <div className="w-18 h-1.5 bg-gradient-to-l from-blue-600 to-transparent rounded-full"></div>
                     </div>
-                    <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-lg transition-colors">A brief introduction to my journey and passion.</p>
+
+                    {/* <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-lg transition-colors">A brief introduction to my journey and passion.</p> */}
                 </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -69,6 +71,50 @@ const About = () => {
                                 Whether it's designing clean architecture on the backend or developing intuitive user interfaces,
                                 I bring a comprehensive approach to software development.
                             </p>
+                            
+                            {/* Social Links */}
+                            <div className="flex flex-wrap gap-4 pt-4">
+                                {[
+                                    { 
+                                        name: 'GitHub', 
+                                        icon: <Github size={20} />, 
+                                        href: 'https://github.com/Balu-parasa',
+                                        color: 'hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black'
+                                    },
+                                    { 
+                                        name: 'LinkedIn', 
+                                        icon: <Linkedin size={20} />, 
+                                        href: 'https://www.linkedin.com/in/balu-parasa',
+                                        color: 'hover:bg-[#0077b5] hover:text-white'
+                                    },
+                                    { 
+                                        name: 'LeetCode', 
+                                        icon: (
+                                            <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+                                                <path d="M13.483 0a1.374 1.374 0 0 0-.961.414l-4.323 4.32a1.09 1.09 0 0 0 0 1.556 1.09 1.09 0 0 0 1.556 0l4.323-4.32A1.09 1.09 0 0 0 13.483 0zm-6.705 3.39a1.374 1.374 0 0 0-1.374 1.374v11.232c0 .759.615 1.375 1.375 1.375h11.232c.759 0 1.375-.616 1.375-1.375V4.764a1.375 1.375 0 0 0-1.375-1.374H6.778zM9.144 5.638h5.712c.427 0 .774.347.774.774v5.712a.774.774 0 0 1-.774.774H9.144a.774.774 0 0 1-.774-.774V6.412c0-.427.347-.774.774-.774z"/>
+                                            </svg>
+                                        ), 
+                                        href: 'https://leetcode.com/u/balu_parasa/',
+                                        color: 'hover:bg-[#FFA116] hover:text-white'
+                                    }
+                                ].map((social, index) => (
+                                    <motion.a
+                                        key={social.name}
+                                        href={social.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.5 + index * 0.1 }}
+                                        whileHover={{ y: -3 }}
+                                        className={`flex items-center gap-2 px-4 py-2 rounded-xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 text-gray-600 dark:text-gray-400 font-medium transition-all duration-300 shadow-sm ${social.color}`}
+                                    >
+                                        {social.icon}
+                                        <span className="text-sm">{social.name}</span>
+                                    </motion.a>
+                                ))}
+                            </div>
                         </motion.div>
                     </div>
                 </div>

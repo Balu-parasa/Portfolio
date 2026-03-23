@@ -56,12 +56,13 @@ const Contact = () => {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight transition-colors">Get In Touch</h2>
-                    <div className="flex items-center justify-center gap-2 mb-6">
-                        <div className="w-12 h-1 bg-gradient-to-r from-blue-600 to-transparent rounded-full"></div>
-                        <div className="w-3 h-3 border-2 border-blue-600 rounded-full"></div>
-                        <div className="w-12 h-1 bg-gradient-to-l from-blue-600 to-transparent rounded-full"></div>
+                    <div className="flex items-center justify-center gap-3 mb-8">
+                        <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-transparent rounded-full"></div>
+                        <div className="w-4 h-4 border-[3px] border-blue-600 rounded-full"></div>
+                        <div className="w-24 h-1.5 bg-gradient-to-l from-blue-600 to-transparent rounded-full"></div>
                     </div>
-                    <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-lg transition-colors italic">Open for opportunities. Let's build something amazing together!</p>
+
+                    {/* <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-lg transition-colors italic">Open for opportunities. Let's build something amazing together!</p> */}
                 </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
@@ -83,7 +84,7 @@ const Contact = () => {
                             {[
                                 { icon: <Mail size={22} />, title: "Email", value: "baluparasa3@gmail.com", href: "mailto:baluparasa3@gmail.com" },
                                 { icon: <Phone size={22} />, title: "Phone", value: "+91 7207574897", href: "tel:+917207574897" },
-                                { icon: <MapPin size={22} />, title: "Location", value: "Lovely Professional University, Punjab, India", href: null }
+                                { icon: <MapPin size={22} />, title: "Location", value: "Narasapur, Andhra Pradesh, India", href: null }
                             ].map((item, index) => (
                                 <div key={index} className="flex items-start gap-5 group">
                                     <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 group-hover:bg-blue-600 dark:group-hover:bg-blue-500 group-hover:text-white dark:group-hover:text-white transition-all duration-300">

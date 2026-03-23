@@ -12,7 +12,7 @@ import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     if (darkMode) {

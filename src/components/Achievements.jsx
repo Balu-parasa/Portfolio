@@ -7,7 +7,7 @@ const Achievements = () => {
         {
             title: "Top 3 — NLP Workshop",
             desc: "Ranked in the Top 3 teams in an NLP Workshop for building an innovative Text-to-Speech system.",
-            status: "ONGOING",
+            status: "JANUARY 2026",
             icon: <Award className="w-5 h-5 text-blue-500" />
         },
         {
@@ -38,12 +38,13 @@ const Achievements = () => {
                     className="text-center mb-20"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">Achievements</h2>
-                    <div className="flex items-center justify-center gap-2 mb-6">
-                        <div className="w-12 h-1 bg-gradient-to-r from-blue-600 to-transparent rounded-full"></div>
-                        <div className="w-3 h-3 border-2 border-blue-600 rounded-full"></div>
-                        <div className="w-12 h-1 bg-gradient-to-l from-blue-600 to-transparent rounded-full"></div>
+                    <div className="flex items-center justify-center gap-3 mb-8">
+                        <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-transparent rounded-full"></div>
+                        <div className="w-4 h-4 border-[3px] border-blue-600 rounded-full"></div>
+                        <div className="w-24 h-1.5 bg-gradient-to-l from-blue-600 to-transparent rounded-full"></div>
                     </div>
-                    <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-lg">Recognized milestones and technical impact.</p>
+
+                    {/* <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-lg">Recognized milestones and technical impact.</p> */}
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
