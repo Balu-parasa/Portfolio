@@ -25,7 +25,7 @@ function App() {
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
-    <div className="min-h-screen font-sans bg-gray-50 text-gray-900 dark:bg-[#050505] dark:text-gray-100 selection:bg-blue-200 selection:text-blue-900 dark:selection:bg-blue-900 dark:selection:text-blue-100 overflow-x-hidden transition-colors duration-300 relative z-0">
+    <div className="min-h-screen font-sans bg-white text-gray-900 dark:bg-[#030303] dark:text-gray-100 selection:bg-blue-200 selection:text-blue-900 dark:selection:bg-blue-900 dark:selection:text-blue-100 overflow-x-hidden transition-colors duration-300 relative z-0">
       <BackgroundAnimation />
       <CustomCursor />
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
@@ -41,7 +41,7 @@ function App() {
         <Contact />
       </main>
 
-      <footer className="bg-white dark:bg-[#050505] py-8 border-t border-gray-100 dark:border-white/10 text-center transition-colors duration-300">
+      <footer className="bg-white dark:bg-[#030303] py-8 border-t border-gray-100 dark:border-white/10 text-center transition-colors duration-300">
         <p className="text-gray-500 dark:text-gray-400 text-sm">
           © {new Date().getFullYear()} Parasa Balu Lakshman Pavan. Built with React & Tailwind CSS.
         </p>

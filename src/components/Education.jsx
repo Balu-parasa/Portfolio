@@ -28,8 +28,12 @@ const eduData = [
 
 const Education = () => {
     return (
-        <section id="education" className="py-24 transition-colors duration-300">
-            <div className="max-w-4xl mx-auto px-6">
+        <section id="education" className="py-24 relative overflow-hidden bg-white dark:bg-[#030303] transition-colors duration-300">
+            {/* Background Decorative Elements */}
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <div className="max-w-4xl mx-auto px-6 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}

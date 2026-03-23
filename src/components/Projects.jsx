@@ -8,26 +8,26 @@ import landchat from "../assets/landchat.png";
 
 const projectsData = [
     {
+        title: "LandChat – Real Estate Platform",
+        description: "A comprehensive real estate property listing and management platform featuring an intelligent chatbot. Built with a modern dark-mode aesthetic and an admin dashboard for efficient property tracking.",
+        image: landchat,
+        tech: ["React.js", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+        github: "https://github.com/Balu-parasa/Land-Real-Estate-Chatbot"
+    },
+    {
         title: "BYOD – Classroom Device Management System",
         description: "Built a secure web-based system for monitoring student devices in real-time. Features interactive dashboard and robust security policies which significantly improved classroom monitoring efficiency.",
         image: byod,
         tech: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "PHP", "MySQL"],
-        github: "#"
+        github: "https://github.com/Balu-parasa/BYOD"
     },
     {
         title: "Weather 24/7 – Real-Time Weather App",
         description: "API-based real-time weather application showing dynamic UI with weather-based backgrounds. Effectively deployed using Docker-based workflows for high availability.",
         image: wether,
         tech: ["HTML", "CSS", "JavaScript", "OpenWeather API"],
-        github: "#",
-        live: "#"
-    },
-    {
-        title: "LandChat – Real Estate Platform",
-        description: "A comprehensive real estate property listing and management platform featuring an intelligent chatbot. Built with a modern dark-mode aesthetic and an admin dashboard for efficient property tracking.",
-        image: landchat,
-        tech: ["React.js", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
-        github: "https://github.com/Balu-parasa/Land-Real-Estate-Chatbot"
+        github: "https://github.com/Balu-parasa/Weather-24-7",
+        live: "https://weather-24-7.onrender.com/"
     }
 ];
 
@@ -45,7 +45,11 @@ const defaultOptions = {
 
 const Projects = () => {
     return (
-        <section id="projects" className="py-24 relative transition-colors duration-300">
+        <section id="projects" className="py-24 relative overflow-hidden bg-white dark:bg-[#030303] transition-colors duration-300">
+            {/* Background Decorative Elements */}
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+
 
             <div className="max-w-[85rem] mx-auto px-6 relative z-10">
                 <motion.div
