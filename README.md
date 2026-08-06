@@ -128,6 +128,21 @@ Technology changes quickly, but curiosity and problem-solving remain timeless.
 
 ---
 
+# 📬 Let's Connect
+
+💼 **LinkedIn**
+
+https://linkedin.com/in/balu-parasa
+
+💻 **GitHub**
+
+https://github.com/Balu-parasa
+
+📧 **Email**
+
+your-email@example.com
+
+---
 
 <div align="center">
 
