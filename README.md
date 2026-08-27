@@ -47,12 +47,7 @@ Rather than showcasing only finished products, this portfolio represents my grow
 
 # 🛠 Tech Stack
 
-### Languages
 
-- Java
-- JavaScript
-- Python
-- SQL
 
 ### Frontend
 
