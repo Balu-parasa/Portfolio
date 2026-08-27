@@ -46,6 +46,19 @@ Rather than showcasing only finished products, this portfolio represents my grow
 ---
 
 # 🛠 Tech Stack
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
 
 
 
