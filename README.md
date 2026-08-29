@@ -152,4 +152,11 @@ your-email@example.com
 
 ---
 
+<div align="center">
+
+### ⭐ Thanks for visiting!
+
+*"Every repository tells a story. This portfolio tells mine."*
+
+</div>
 
