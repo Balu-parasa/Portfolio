@@ -87,7 +87,12 @@ const Education = () => {
                                     </div>
                                 </div>
                             </div>
-
+                            <div className="flex flex-row md:flex-col items-center md:items-end justify-between md:justify-center shrink-0 w-full md:w-auto mt-4 md:mt-0 pt-4 md:pt-0 border-t md:border-t-0 border-gray-50 dark:border-white/5 transition-colors">
+                                <div className="text-gray-500 dark:text-gray-400 font-medium mb-0 md:mb-2 transition-colors">{edu.duration}</div>
+                                <div className={`px-3 py-1 text-xs font-bold rounded-full tracking-wide transition-colors ${edu.status === 'Current' ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400' : 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400'}`}>
+                                    {edu.status}
+                                </div>
+                            </div>
                             
                         </motion.div>
                     ))}
