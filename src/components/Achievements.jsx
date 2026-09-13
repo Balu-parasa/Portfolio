@@ -61,7 +61,20 @@ const Achievements = () => {
                             {/* Subtle background glow on hover */}
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-indigo-500/0 group-hover:from-blue-500/[0.02] group-hover:to-indigo-500/[0.02] transition-all duration-500"></div>
 
-                            
+                            <div className="relative z-10 flex flex-col h-full">
+                                <div className="w-10 h-10 rounded-lg bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-blue-50 dark:group-hover:bg-blue-500/10 transition-all duration-500">
+                                    {React.cloneElement(item.icon, { className: "w-4 h-4 text-blue-500" })}
+                                </div>
+                                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                                    {item.title}
+                                </h3>
+                                <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-xs mb-6 flex-grow">
+                                    {item.desc}
+                                </p>
+                                <div className="text-[10px] font-bold text-blue-600/70 dark:text-blue-500/70 uppercase tracking-widest mt-auto group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                    {item.status}
+                                </div>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
