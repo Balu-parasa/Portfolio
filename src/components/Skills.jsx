@@ -43,6 +43,75 @@ const skillsData = [
     }
 ];
 
+// All skills for the horizontal scroll strip
+const allScrollSkills = [
+    { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+    { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+    { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+    { name: "React.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+    { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+    { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+    { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+    { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+    { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+    { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+    { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+    { name: "C++", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
+    { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+    { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+    { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+    { name: "Postman", icon: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" },
+    { name: "C", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
+];
+
+// Duplicated list for seamless loop
+const duplicatedScrollSkills = [...allScrollSkills, ...allScrollSkills];
+
+// Single skill card for the horizontal strip
+const ScrollSkillCard = ({ skill }) => (
+    <div className="group flex flex-col items-center justify-center w-[140px] h-[100px] mx-[10px] rounded-2xl flex-shrink-0
+        bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-sm
+        border border-gray-100 dark:border-white/10
+        shadow-md
+        transform transition-all duration-300 hover:scale-105 hover:border-blue-500/40 hover:shadow-blue-500/20
+        cursor-default">
+        <div className="w-11 h-11 flex items-center justify-center bg-gray-50 dark:bg-[#151515] rounded-xl mb-2
+            group-hover:bg-blue-50 dark:group-hover:bg-blue-950/30 transition-colors duration-300">
+            <img
+                src={skill.icon}
+                alt={skill.name}
+                className="w-7 h-7 object-contain group-hover:scale-110 transition-transform duration-300"
+                onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg";
+                }}
+            />
+        </div>
+        <p className="text-xs font-medium text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 text-center px-2 leading-tight">
+            {skill.name}
+        </p>
+    </div>
+);
+
+// Horizontal infinite scroll marquee
+const HorizontalScrollStrip = () => (
+    <div className="relative w-full overflow-hidden py-2">
+        {/* Left fade */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none
+            bg-gradient-to-r from-white dark:from-[#030303] to-transparent" />
+        {/* Right fade */}
+        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none
+            bg-gradient-to-l from-white dark:from-[#030303] to-transparent" />
+
+        <div className="flex w-fit" style={{ animation: 'scrollLeft 30s linear infinite' }}>
+            {duplicatedScrollSkills.map((skill, idx) => (
+                <ScrollSkillCard key={idx} skill={skill} />
+            ))}
+        </div>
+    </div>
+);
+
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -140,6 +209,14 @@ const Skills = () => {
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[150px] pointer-events-none"></div>
             <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[150px] pointer-events-none"></div>
 
+            {/* Keyframe animations */}
+            <style>{`
+                @keyframes scrollLeft {
+                    0%   { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+            `}</style>
+
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -158,6 +235,7 @@ const Skills = () => {
                     {/* <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-lg transition-colors">Proficiency in libraries and tools.</p> */}
                 </motion.div>
 
+                {/* ── Main Skills Grid ── */}
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
@@ -169,9 +247,30 @@ const Skills = () => {
                         <TiltCard key={index} group={group} />
                     ))}
                 </motion.div>
+
+                {/* ── Infinite Horizontal Scroll Strip ── */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: 0.7, delay: 0.2 }}
+                    className="mt-20"
+                >
+                    {/* Section label */}
+                    <div className="flex items-center gap-4 mb-8 justify-center">
+                        <div className="h-px flex-1 max-w-[120px] bg-gradient-to-r from-transparent to-blue-600/40"></div>
+                        <span className="text-xs font-bold tracking-[0.25em] uppercase text-blue-600 dark:text-blue-400">
+                            All Technologies
+                        </span>
+                        <div className="h-px flex-1 max-w-[120px] bg-gradient-to-l from-transparent to-blue-600/40"></div>
+                    </div>
+
+                    <HorizontalScrollStrip />
+                </motion.div>
             </div>
         </section>
     );
 };
 
 export default Skills;
+
