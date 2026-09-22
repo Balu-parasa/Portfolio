@@ -6,6 +6,11 @@
 
 <p align="center">
 
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Java](https://img.shields.io/badge/Java-E76F00?style=for-the-badge&logo=openjdk&logoColor=white)
+![MERN](https://img.shields.io/badge/MERN-3C873A?style=for-the-badge)
+![AI](https://img.shields.io/badge/Artificial%20Intelligence-5C2D91?style=for-the-badge)
 
 </p>
 
