@@ -126,6 +126,14 @@ Technology changes quickly, but curiosity and problem-solving remain timeless.
 
 ---
 
+# 📈 Currently Exploring
+
+- Spring Boot
+- System Design
+- Cloud Technologies
+- AI-powered Applications
+- Backend Architecture
+
 
 ---
 
