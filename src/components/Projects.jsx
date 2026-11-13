@@ -1,33 +1,34 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Tilt } from 'react-tilt';
-import { ExternalLink, Github } from 'lucide-react';
-import wether from "../assets/wether.png";
-import byod from "../assets/byod.jpg";
+import { ExternalLink, Github, Award } from 'lucide-react';
+import kokbrok from "../assets/kokbrok.png";
+import serviceflow from "../assets/serviceflow.png";
 import landchat from "../assets/landchat.png";
 
 const projectsData = [
     {
-        title: "LandChat – Real Estate Platform",
-        description: "A comprehensive real estate property listing and management platform featuring an intelligent chatbot. Built with a modern dark-mode aesthetic and an admin dashboard for efficient property tracking.",
+        title: "KokBrok AI – Kokborok AI Dictionary & Translator",
+        description: "An NLP-powered language application designed to support the low-resource Kokborok language. Users can enter Romanized Kokborok words and receive corresponding English meanings and parts-of-speech information using a structured language dataset.",
+        image: kokbrok,
+        tech: ["Python", "Natural Language Processing (NLP)", "Dataset Processing"],
+        achievement: "Top 3 Team Award – NLP Workshop"
+    },
+    {
+        title: "ServiceFlow – Real-Time Dispatch System",
+        description: "A full-stack real-time service dispatch and technician management platform designed to streamline service requests, technician assignment, and field-service operations with live tracking and WebSockets.",
+        image: serviceflow,
+        tech: ["Next.js", "React.js", "TypeScript", "Laravel", "PHP", "TiDB (MySQL)", "Pusher WebSockets", "Leaflet.js", "Tailwind CSS"],
+        github: "https://github.com/Balu-parasa/Serviceflow-Dispatch-System",
+        live: "https://serviceflow-dispatch-system.vercel.app/"
+    },
+    {
+        title: "LandChat AI – AI-Powered Real Estate Assistant",
+        description: "An AI-powered real-estate and land investment assistant that helps buyers, sellers, and investors discover and evaluate land opportunities through conversational AI with Google Gemini integration.",
         image: landchat,
-        tech: ["React.js", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
-        github: "https://github.com/Balu-parasa/Land-Real-Estate-Chatbot"
-    },
-    {
-        title: "BYOD – Classroom Device Management System",
-        description: "Built a secure web-based system for monitoring student devices in real-time. Features interactive dashboard and robust security policies which significantly improved classroom monitoring efficiency.",
-        image: byod,
-        tech: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "PHP", "MySQL"],
-        github: "https://github.com/Balu-parasa/BYOD"
-    },
-    {
-        title: "Weather 24/7 – Real-Time Weather App",
-        description: "API-based real-time weather application showing dynamic UI with weather-based backgrounds. Effectively deployed using Docker-based workflows for high availability.",
-        image: wether,
-        tech: ["HTML", "CSS", "JavaScript", "OpenWeather API"],
-        github: "https://github.com/Balu-parasa/Weather-24-7",
-        live: "https://weather-24-7.onrender.com/"
+        tech: ["React.js", "Vite", "Node.js", "Express.js", "MongoDB", "Google Gemini AI", "JWT Auth", "Tailwind CSS"],
+        github: "https://github.com/Balu-parasa/LandChat-AI",
+        live: "https://landchatbot.vercel.app/"
     }
 ];
 
@@ -41,7 +42,7 @@ const defaultOptions = {
     axis: null,
     reset: true,
     easing: "cubic-bezier(.03,.98,.52,.99)",
-}
+};
 
 const Projects = () => {
     return (
@@ -49,7 +50,6 @@ const Projects = () => {
             {/* Background Decorative Elements */}
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
             <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-[120px] pointer-events-none"></div>
-
 
             <div className="max-w-[85rem] mx-auto px-6 relative z-10">
                 <motion.div
@@ -59,14 +59,14 @@ const Projects = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight transition-colors">Featured Projects</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight transition-colors">
+                        Featured Projects
+                    </h2>
                     <div className="flex items-center justify-center gap-3 mb-8">
                         <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-transparent rounded-full"></div>
                         <div className="w-4 h-4 border-[3px] border-blue-600 rounded-full"></div>
                         <div className="w-24 h-1.5 bg-gradient-to-l from-blue-600 to-transparent rounded-full"></div>
                     </div>
-
-                    {/* <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-lg transition-colors">Collection of my most impactful works.</p> */}
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -79,28 +79,40 @@ const Projects = () => {
                             transition={{ duration: 0.6, delay: index * 0.15 }}
                         >
                             <Tilt options={defaultOptions} className="h-full">
-                                <div className="bg-white dark:bg-[#0a0a0a] rounded-2xl overflow-hidden border border-gray-100 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(59,130,246,0.1)] dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.05)] transition-all duration-300 h-full flex flex-col group">
+                                <div className="bg-white dark:bg-[#0a0a0a] rounded-2xl overflow-hidden border border-gray-100 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(59,130,246,0.12)] dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.06)] transition-all duration-300 h-full flex flex-col group">
 
                                     {/* Image Container with Hover Expand */}
-                                    <div className="relative h-52 overflow-hidden">
-                                        <div className="absolute inset-0 bg-blue-900/20 dark:bg-black/40 group-hover:bg-transparent dark:group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                                    <div className="relative aspect-video overflow-hidden bg-gray-900">
+                                        <div className="absolute inset-0 bg-blue-900/10 dark:bg-black/30 group-hover:bg-transparent dark:group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
                                         <img
                                             src={project.image}
                                             alt={project.title}
-                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                                            loading="lazy"
                                         />
+                                        {project.achievement && (
+                                            <div className="absolute top-3 right-3 z-20 flex items-center gap-1.5 px-3 py-1 bg-blue-600/90 backdrop-blur-md text-white text-[11px] font-semibold rounded-full shadow-lg border border-white/20">
+                                                <Award size={13} className="text-amber-300" />
+                                                <span>{project.achievement}</span>
+                                            </div>
+                                        )}
                                     </div>
 
                                     {/* Content */}
                                     <div className="p-6 flex-grow flex flex-col">
-                                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{project.title}</h3>
+                                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
+                                            {project.title}
+                                        </h3>
                                         <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 flex-grow leading-relaxed transition-colors">
                                             {project.description}
                                         </p>
 
                                         <div className="flex flex-wrap gap-1.5 mb-6 mt-auto">
                                             {project.tech.map((tech, tIndex) => (
-                                                <span key={tIndex} className="px-2.5 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 text-xs font-semibold rounded-md tracking-wide transition-colors">
+                                                <span
+                                                    key={tIndex}
+                                                    className="px-2.5 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 text-xs font-semibold rounded-md tracking-wide transition-colors"
+                                                >
                                                     {tech}
                                                 </span>
                                             ))}
@@ -111,8 +123,9 @@ const Projects = () => {
                                                 <a
                                                     href={project.live}
                                                     target="_blank"
-                                                    rel="noreferrer"
+                                                    rel="noopener noreferrer"
                                                     className="flex items-center gap-1.5 text-xs font-semibold text-white bg-gray-900 dark:bg-white dark:text-gray-900 hover:bg-blue-600 dark:hover:bg-blue-500 px-4 py-2 rounded-lg transition-colors shadow-sm"
+                                                    aria-label={`View live demo of ${project.title}`}
                                                 >
                                                     <ExternalLink size={14} /> View Live
                                                 </a>
@@ -121,11 +134,17 @@ const Projects = () => {
                                                 <a
                                                     href={project.github}
                                                     target="_blank"
-                                                    rel="noreferrer"
+                                                    rel="noopener noreferrer"
                                                     className="flex items-center gap-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 px-4 py-2 rounded-lg transition-colors shadow-sm"
+                                                    aria-label={`View source code of ${project.title}`}
                                                 >
                                                     <Github size={14} /> Source
                                                 </a>
+                                            )}
+                                            {!project.github && !project.live && (
+                                                <span className="text-xs font-medium text-gray-500 dark:text-gray-400 italic">
+                                                    NLP Workshop Project
+                                                </span>
                                             )}
                                         </div>
                                     </div>
